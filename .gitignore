@@ -1,0 +1,23 @@
+# Ignore node_modules in both Client and Server
+Client/node_modules/
+Server/node_modules/
+
+# Ignore build output in Client
+Client/build/
+Client/dist/
+
+# Ignore environment files in both Client and Server
+Client/.env
+Server/.env
+
+# Ignore logs in Server
+Server/logs/
+Server/*.log
+
+# Ignore system files and IDE files
+Client/.DS_Store
+Server/.DS_Store
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
