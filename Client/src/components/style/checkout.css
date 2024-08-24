@@ -1,0 +1,113 @@
+/* style/checkout.css */
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 150px auto 20px auto; /* Adjust margin-top to move it down */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .checkout-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .checkout-cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .checkout-item-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+  }
+  
+  .checkout-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .checkout-item-name {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .checkout-item-quantity,
+  .checkout-item-price,
+  .checkout-item-total {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .checkout-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .checkout-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .checkout-form-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .checkout-form-input,
+  .checkout-form-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .checkout-form-input {
+    width: 100%;
+  }
+  
+  .checkout-form-select {
+    width: 100%;
+  }
+  
+  .checkout-submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkout-submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .checkout-total-price {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
