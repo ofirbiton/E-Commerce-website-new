@@ -29,6 +29,29 @@
     margin-right: 20px;
     position: relative; 
 }
+
+.cartIconContainer {
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cartIcon {
+    position: absolute;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-size: 50px;
+    right: -2px;
+  }
+  
+  .cartIcon.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .cartIcon.hide {
+    opacity: 0;
+    transform: scale(0.8);
+  }
   
 .cartCount {
     position: absolute;
@@ -81,7 +104,7 @@
 
 .cart-overlay.show {
     height: fit-content;
-    max-height: 40vh; 
+    max-height: 50vh; 
     display: flex;
     margin-bottom: 0;
     transform: translateY(0);
@@ -123,6 +146,8 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid #eee; 
+    color: #000000;
+
 }
   
 .item-image {
@@ -130,12 +155,26 @@
     height: 120px;
     margin: 10px;
 }
+
+.item-price {
+    font-size: 27px;
+    color: black;
+    font-weight: 700;
+}
+
+.item-subtotal {
+    font-size: 23px;
+    color: black;
+    font-weight: 300;
+}
   
 .item-details {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 20px;
+    font-weight: 300;
 }
   
 .item-details h3 {
@@ -162,7 +201,6 @@
     position: absolute; 
     bottom: 0; 
     width: 100%; 
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); 
     display: flex;
     justify-content: center; 
 }
@@ -193,7 +231,7 @@
 .increment {
     background-color: #ddd;
     border: none;
-    padding: 3px 8px;
+    padding: 2px 8px;
     cursor: pointer;
     font-size: 18px;
     margin: 5px;
@@ -202,7 +240,7 @@
 
 .decrement:hover,
 .increment:hover {
-    background-color: #a2a2a2;
+    background-color: #b0b0b0;
 }
   
 .quantity {

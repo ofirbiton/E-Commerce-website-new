@@ -8,6 +8,11 @@ import { faCartShopping, faCartArrowDown, faTimes } from '@fortawesome/free-soli
 const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) => {
   const [showCart, setShowCart] = useState(false);
   const location = useLocation(); 
+  const [icon, setIcon] = useState(faCartShopping); 
+
+  useEffect(() => {
+    setIcon(cartItems.length > 0 ? faCartArrowDown : faCartShopping);
+  }, [cartItems.length]);
 
   useEffect(() => {
     if (location.pathname === '/checkout') {
@@ -35,6 +40,8 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
     removeFromCart(itemId);
   };
 
+  const isCheckoutPage = location.pathname === '/checkout';
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -42,18 +49,26 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
           <img src={logo} alt="leh leha" className="logoImage" />
         </Link>
       </div>
-      <button className="cartButton" onClick={toggleCart} disabled={location.pathname === '/checkout'}>
-        <FontAwesomeIcon
-          icon={cartItems.length > 0 ? faCartArrowDown : faCartShopping}
-          className="cartIcon"
-        />
-        {cartItems.length > 0 && (
-          <span className="cartCount">{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
-        )}
-        {totalPrice > 0 && (
-          <span className="cartTotal">₪{totalPrice}</span>
-        )}
-      </button>
+      {!isCheckoutPage && (
+        <button className="cartButton" onClick={toggleCart} disabled={location.pathname === '/checkout'}>
+          <div className="cartIconContainer">
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              className={`cartIcon ${icon === faCartShopping ? 'show' : 'hide'}`}
+            />
+            <FontAwesomeIcon
+              icon={faCartArrowDown}
+              className={`cartIcon ${icon === faCartArrowDown ? 'show' : 'hide'}`}
+            />
+          </div>
+          {cartItems.length > 0 && (
+            <span className="cartCount">{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
+          )}
+          {totalPrice > 0 && (
+            <span className="cartTotal">₪{totalPrice}</span>
+          )}
+        </button>
+      )}
 
       <div className={`cart-overlay ${showCart ? 'show' : ''}`}>
         <div className={`cart-items ${cartItems.length === 0 ? 'empty-cart' : ''}`}>
@@ -62,10 +77,11 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
               <div className="cart-item" key={item._id}>
                 <img src={item.image} alt={item.name} className="item-image" />
                 <div className="item-details">
-                  <h3>{item.name}</h3>
-                  <span>Price: ₪{item.price}</span>
+                  <span className="item-price">₪{item.price}</span>
+                  <span>{item.title}</span>
+                  
                   <div className="quantity-controls">
-                    <span className="quantity-label">Quantity:</span>
+                    <span className="quantity-label">Qty:</span>
                     <button 
                       className="decrement" 
                       onClick={() => handleDecrement(item._id, item.quantity)}
@@ -80,7 +96,7 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
                       +
                     </button>
                   </div>
-                  <span>Total: ₪{item.price * item.quantity}</span>
+                  <span className="item-subtotal">Subtotal ₪{item.price * item.quantity}</span>
                   <button className="removeItem" onClick={() => handleRemove(item._id)}>
                     <FontAwesomeIcon icon={faTimes} />
                   </button>

@@ -9,6 +9,12 @@
     max-width: 1200px;
 }
 
+h3 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+
 .product {
     display: flex;
     flex-direction: column;
@@ -27,8 +33,11 @@
 
 .product span {
     display: block; /* Ensure price is on a new line */
-    margin: 0.5rem 0; /* Space between title and price */
+    margin: 0.5rem 0; 
     font-size: 1.2rem; /* Adjust font size as needed */
+    font-size: 27px;
+    color: black;
+    font-weight: 700;
 }
 
 .product img {

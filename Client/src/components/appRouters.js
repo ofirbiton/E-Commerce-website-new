@@ -65,7 +65,7 @@ const AppRouters = () => {
         <Route path="/" element={<Home addToCart={addToCart} />} />
         <Route
           path="/checkout"
-          element={<Checkout cartItems={cartItems} />}
+          element={<Checkout cartItems={cartItems} setCartItems={setCartItems}/>}
         />
       </Routes>
     </Router>

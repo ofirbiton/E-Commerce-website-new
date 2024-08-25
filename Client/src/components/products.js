@@ -18,7 +18,7 @@ const Products = ({ addToCart }) => {
         <div key={index} className="product">
           <img src={product.image} alt={product.title} />
           <h3>{product.title}</h3>
-          <span>₪{product.price}</span>
+          <span className="item-price">₪{product.price}</span>
           <button className="addToCart" onClick={() => addToCart(product)}>ADD TO BAG</button>
         </div>
       ))}
