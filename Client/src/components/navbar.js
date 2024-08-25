@@ -65,7 +65,7 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
             <span className="cartCount">{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
           )}
           {totalPrice > 0 && (
-            <span className="cartTotal">₪{totalPrice}</span>
+            <span className="cartTotal">ILS{totalPrice}</span>
           )}
         </button>
       )}
@@ -77,7 +77,7 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
               <div className="cart-item" key={item._id}>
                 <img src={item.image} alt={item.name} className="item-image" />
                 <div className="item-details">
-                  <span className="item-price">₪{item.price}</span>
+                  <span className="item-price">ILS{item.price}</span>
                   <span>{item.title}</span>
                   
                   <div className="quantity-controls">
@@ -96,7 +96,7 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
                       +
                     </button>
                   </div>
-                  <span className="item-subtotal">Subtotal ₪{item.price * item.quantity}</span>
+                  <span className="item-subtotal">Subtotal ILS{item.price * item.quantity}</span>
                   <button className="removeItem" onClick={() => handleRemove(item._id)}>
                     <FontAwesomeIcon icon={faTimes} />
                   </button>
