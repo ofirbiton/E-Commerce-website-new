@@ -13,13 +13,13 @@ const Products = ({ addToCart }) => {
   }, []);
 
   return (
-    <div className="productsGrid">
+    <div className="products-grid">
       {products.map((product, index) => (
         <div key={index} className="product">
           <img src={product.image} alt={product.title} />
           <h3>{product.title}</h3>
           <span className="item-price">ILS{product.price}</span>
-          <button className="addToCart" onClick={() => addToCart(product)}>ADD TO BAG</button>
+          <button className="add-to-cart" onClick={() => addToCart(product)}>ADD TO BAG</button>
         </div>
       ))}
     </div>

@@ -1,8 +1,11 @@
+// /*<!-- Ofir Biton 208582494 & Noe Mignolet 209709260 -->*/
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './style/checkout.css';
 
 const Checkout = ({ cartItems, setCartItems }) => {
+  // State hooks for form fields and error messages
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -19,6 +22,7 @@ const Checkout = ({ cartItems, setCartItems }) => {
     return itemTotal + shippingCost;
   };
 
+  // Function to validate form fields and set error messages
   const validateForm = () => {
     const newErrors = {};
 
@@ -34,12 +38,15 @@ const Checkout = ({ cartItems, setCartItems }) => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate the form before proceeding
     if (!validateForm()) return;
 
     try {
+      // Send a POST request to the server with order details
       const response = await fetch('http://localhost:3000/orders', {
         method: 'POST',
         headers: {
@@ -63,9 +70,9 @@ const Checkout = ({ cartItems, setCartItems }) => {
       const data = await response.json();
       setOrderNumber(data.orderNumber);
 
-      // Clear the cart and navigate
+      // Clear the cart and navigate to the home page after a delay
       localStorage.removeItem('cart');
-      setCartItems([]); 
+      setCartItems([]);
       setTimeout(() => {
         navigate('/');
       }, 3000);
@@ -80,6 +87,7 @@ const Checkout = ({ cartItems, setCartItems }) => {
       <h1 className="checkout-title">CHECKOUT</h1>
       <div className="order-details">
         <form className="checkout-form" onSubmit={handleSubmit} noValidate>
+          {/* Name input */}
           <div className="checkout-form-group">
             <label className="checkout-form-label">Name</label>
             {errors.name && <div className="error-message">{errors.name}</div>}
@@ -90,6 +98,8 @@ const Checkout = ({ cartItems, setCartItems }) => {
               className="checkout-form-input" 
             />
           </div>
+
+          {/* Email input */}
           <div className="checkout-form-group">
             <label className="checkout-form-label">Email</label>
             {errors.email && <div className="error-message">{errors.email}</div>}
@@ -100,6 +110,8 @@ const Checkout = ({ cartItems, setCartItems }) => {
               className="checkout-form-input" 
             />
           </div>
+
+          {/* Phone input */}
           <div className="checkout-form-group">
             <label className="checkout-form-label">Phone</label>
             {errors.phone && <div className="error-message">{errors.phone}</div>}
@@ -110,6 +122,8 @@ const Checkout = ({ cartItems, setCartItems }) => {
               className="checkout-form-input" 
             />
           </div>
+
+          {/* Address input */}
           <div className="checkout-form-group">
             <label className="checkout-form-label">Address</label>
             {errors.address && <div className="error-message">{errors.address}</div>}
@@ -120,6 +134,8 @@ const Checkout = ({ cartItems, setCartItems }) => {
               className="checkout-form-input" 
             />
           </div>
+
+          {/* Shipping method selection */}
           <div className="checkout-form-group">
             <label className="checkout-form-label">Delivery</label>
             <select 
@@ -131,14 +147,20 @@ const Checkout = ({ cartItems, setCartItems }) => {
               <option value="14-day">14-day shipping (Free)</option>
             </select>
           </div>
+
+          {/* Total price */}
           <h3 className="checkout-total-price">
             TOTAL TO PAY ILS{calculateTotalPrice()}
           </h3>
+
+          {/* Submit button */}
           <div className="place-order-container">
             <button type="submit" className="checkout-submit-button">BUY NOW</button>
           </div>
         </form>
       </div>
+
+      {/* Display cart items */}
       <div className="checkout-cart-items">
         {cartItems.map((item) => (
           <div className="checkout-cart-item" key={item._id}>
@@ -152,6 +174,8 @@ const Checkout = ({ cartItems, setCartItems }) => {
           </div>
         ))}
       </div>
+
+      {/* Display order confirmation */}
       {orderNumber && (
         <div className="checkout-order-number">
           <h2>Thank you for your order!</h2>

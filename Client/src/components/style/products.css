@@ -1,56 +1,72 @@
-.productsGrid {
+/* Grid layout for the product display */
+.products-grid {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    gap: 2.5rem;
+    gap: 5rem;
     margin: auto;
     padding: 1rem;
     width: 100%;
     max-width: 1200px;
 }
 
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 800px) {
+    .products-grid {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(9, auto);
+    }  
+
+    .product {
+        max-width: 70%;
+        max-height: 100%;
+        transform: translateX(23%);
+    }
+}
+
+/* Styling for section headings */
 h3 {
     font-size: 20px;
     font-weight: 300;
 }
 
-
+/* Styling for each product item */
 .product {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ccc;
     padding: 1rem;
     text-align: center;
     background-color: #fff;
-    border-radius: 10px;
     height: 100%;
     box-sizing: border-box;
     text-decoration: solid;
     font-weight: 600;
 }
 
+/* Styling for product price and details */
 .product span {
-    display: block; /* Ensure price is on a new line */
-    margin: 0.5rem 0; 
-    font-size: 1.2rem; /* Adjust font size as needed */
+    display: block;
+    margin: 0.5rem 0;
     font-size: 25px;
     color: black;
     font-weight: 700;
 }
 
+/* Styling for product images */
 .product img {
     width: 100%;
-    height: 80%;
+    max-height: 90%;
     object-fit: cover;
 }
 
-.addToCart {
+/* Styling for the "Add to Cart" button */
+.add-to-cart {
     background-color: #2a9644;
     color: white;
     border: none;
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 1rem 2rem;
     cursor: pointer;
     width: 80%;
     font-family: Arial, Helvetica, sans-serif;
@@ -59,6 +75,7 @@ h3 {
     font-weight: 600;
 }
 
-.addToCart:hover {
+/* Hover effect for the "Add to Cart" button */
+.add-to-cart:hover {
     background-color: #217735;
 }
