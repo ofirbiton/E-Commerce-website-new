@@ -1,7 +1,9 @@
+/* Home page styling */
 .home {
     text-align: center;
 }
 
+/* Hero section container styling */
 .hero {
     position: relative;
     text-align: center;
@@ -9,13 +11,15 @@
     margin-bottom: 2rem;
 }
 
+/* Hero image styling */
 .hero img {
     width: 100%;
     height: 60vh;
     object-fit: cover;
 }
 
-.heroText {
+/* Text styling within the hero section */
+.hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -24,5 +28,3 @@
     border-radius: 10px;
     font-size: 5rem;
 }
-
-

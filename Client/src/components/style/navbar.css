@@ -1,3 +1,4 @@
+/* Navbar container styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -11,12 +12,14 @@
     font-weight: 700;
 }
   
-.logo img {
+/* Logo image styling */
+.logo-image {
     width: 400px;
     height: 130px;
 }
   
-.cartButton {
+/* Cart button styling */
+.cart-button {
     background: white;
     border: none;
     cursor: pointer;
@@ -30,30 +33,35 @@
     position: relative; 
 }
 
-.cartIconContainer {
+/* Container for the cart icon */
+.cart-icon-container {
     position: relative;
     width: 50px;
     height: 50px;
-  }
+}
   
-  .cartIcon {
+/* Styling for the cart icon with transition effects */
+.cart-icon {
     position: absolute;
     transition: opacity 0.5s ease, transform 0.5s ease;
     font-size: 50px;
     right: -2px;
-  }
+}
   
-  .cartIcon.show {
+/* Visible state of the cart icon */
+.cart-icon.show {
     opacity: 1;
     transform: scale(1);
-  }
+}
   
-  .cartIcon.hide {
+/* Hidden state of the cart icon */
+.cart-icon.hide {
     opacity: 0;
     transform: scale(0.8);
-  }
+}
   
-.cartCount {
+/* Cart item count badge styling */
+.cart-count {
     position: absolute;
     top: -10px; 
     right: -15px; 
@@ -68,7 +76,8 @@
     font-size: 16px; 
 }
   
-.cartTotal {
+/* Cart total badge styling */
+.cart-total {
     position: absolute;
     bottom: -27px;
     right: -10px;
@@ -82,6 +91,7 @@
     justify-content: center;
 }
 
+/* Styling for the cart overlay */
 .cart-overlay {
     position: absolute;
     top: 100%;
@@ -102,6 +112,7 @@
     flex-direction: column;
 }
 
+/* Visible state of the cart overlay */
 .cart-overlay.show {
     height: fit-content;
     max-height: 50vh; 
@@ -112,6 +123,16 @@
     visibility: visible;
 }
 
+/* Responsive adjustments for cart overlay on smaller screens */
+@media screen and (max-width: 800px) {
+    .cart-overlay.show {
+        max-height: 80vh;
+        width: 95vw;
+        transform: translateX(-2%);
+    }
+}
+
+/* Cart items container styling */
 .cart-items {
     flex: 1; 
     overflow-y: auto; 
@@ -119,10 +140,12 @@
     margin-bottom: 85px;
 }
 
+/* Styling for an empty cart */
 .cart-items.empty-cart {
     margin: 0;
 }
 
+/* Custom scrollbar styling for cart items */
 .cart-items::-webkit-scrollbar {
     width: 6px;
 }
@@ -136,38 +159,46 @@
     background-color: rgba(209, 190, 190, 0.1);
 }
 
+/* Empty cart message styling */
 .empty-cart-message {
     text-align: center;
     font-size: 18px;
     color: #666;
 }
 
+/* Individual cart item styling */
 .cart-item {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #eee; 
     color: #000000;
-
+    position: relative;
+    text-align: left;
+    padding: 10px;
 }
   
+/* Image styling for each cart item */
 .item-image {
-    width: 120px;
-    height: 120px;
-    margin: 10px;
+    width: 140px;
+    height: 140px;
+    margin-right: 10px;
 }
 
+/* Price styling for each cart item */
 .item-price {
     font-size: 27px;
     color: black;
     font-weight: 700;
 }
 
+/* Subtotal styling for each cart item */
 .item-subtotal {
     font-size: 23px;
     color: black;
     font-weight: 300;
 }
   
+/* Details section for each cart item */
 .item-details {
     flex: 1;
     display: flex;
@@ -177,11 +208,16 @@
     font-weight: 300;
 }
   
+/* Heading styling for item details */
 .item-details h3 {
     margin: 0;
 }
   
-.removeItem {
+/* Remove item button styling */
+.remove-item {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
     background: none;
     color: rgb(0, 0, 0);
     border: none;
@@ -189,10 +225,12 @@
     font-size: 20px;
 }
 
-.removeItem:hover {
+/* Hover effect for remove item button */
+.remove-item:hover {
     color: red;
 }
   
+/* Cart summary section styling */
 .cart-summary {
     padding: 10px; 
     border-top: 1px solid #eee; 
@@ -205,6 +243,7 @@
     justify-content: center; 
 }
   
+/* Button styling in the cart summary */
 .cart-summary button {
     background: #2a9644;
     color: white;
@@ -218,15 +257,18 @@
     transition: background-color 0.3s ease;
 }
   
+/* Hover effect for button in the cart summary */
 .cart-summary button:hover {
     background: #217735;
 }
 
+/* Styling for quantity controls */
 .quantity-controls {
     display: flex;
     align-items: center;
 }
   
+/* Styling for decrement and increment buttons */
 .decrement,
 .increment {
     background-color: #ddd;
@@ -238,11 +280,13 @@
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect for quantity buttons */
 .decrement:hover,
 .increment:hover {
     background-color: #b0b0b0;
 }
   
+/* Styling for quantity display */
 .quantity {
     margin: 0 10px;
     font-size: 18px;

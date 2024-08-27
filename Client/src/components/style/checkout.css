@@ -1,17 +1,17 @@
-/* Checkout Container */
+/* Checkout Container - Main layout for the checkout page */
 .checkout-container {
   display: flex;
   justify-content: space-between;
   padding: 20px;
   font-family: Arial, sans-serif;
-  width: 80%; /* Adjust width as needed */
-  max-width: 1200px; /* Limit max width for larger screens */
-  margin: 300px auto 20px auto; /* Center horizontally with auto margins */
+  width: 80%;
+  max-width: 1200px;
+  margin: 300px auto 20px auto;
 }
 
-/* Title */
+/* Title - Styling for the checkout page title */
 .checkout-title {
-  font-size: 40px; /* Increase font size */
+  font-size: 40px;
   font-weight: bolder;
   text-align: center;
   margin: 0 auto;
@@ -22,10 +22,10 @@
   letter-spacing: 3px;
 }
 
-/* Fixed Order Details Container */
+/* Fixed Order Details Container - Fixed position container for order details */
 .order-details {
   position: sticky;
-  top: 150px; /* Adjust based on title height */
+  top: 150px;
   width: 50%;
   background: #ffffff;
   padding: 40px;
@@ -38,19 +38,19 @@
   margin-bottom: 40px;
 }
 
-/* Place Order Button Container */
+/* Place Order Button Container - Container for the place order button */
 .place-order-container {
   width: 100%;
   background-color: white;
 }
 
-/* Place Order Button */
+/* Place Order Button - Styling for the checkout button */
 .checkout-submit-button {
   width: 100%;
   padding: 20px;
   font-size: 20px;
   color: #fff;
-  background-color: #2a9644; /* ASOS green */
+  background-color: #2a9644; 
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
@@ -61,57 +61,56 @@
 }
 
 .checkout-submit-button:hover {
-  background-color: #217735; /* Darker green */
+  background-color: #217735; 
 }
 
-/* Product Items Container */
+/* Product Items Container - Container for the list of cart items */
 .checkout-cart-items {
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 50%; /* Adjust width to ensure products are on the right side */
+  width: 50%;
   font-weight: 700;
 }
 
-/* Each Product Item */
+/* Each Product Item - Styling for individual cart items */
 .checkout-cart-item {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* border: 1px solid #ddd; */
-  padding: 20px; /* Increase padding for more space around items */
-  min-width: 25vw; /* Increase max-width for larger items */
+  padding: 20px;
+  min-width: 25vw;
   background-color: white;
-  margin-bottom: 5px; /* Add spacing between items */
+  margin-bottom: 5px;
   margin-left: 10px;
 }
 
-/* Product Image */
+/* Product Image - Styling for product images in the cart */
 .checkout-item-image {
-  width: 200px; /* Increase width */
-  height: auto; /* Adjust height to maintain aspect ratio */
-  max-height: 200px; /* Limit maximum height */
+  width: 200px;
+  height: auto;
+  max-height: 200px;
   object-fit: cover;
-  margin-right: 30px; /* Increase space between image and text */
+  margin-right: 30px;
 }
 
-/* Product Details */
+/* Product Details - Container for product details */
 .checkout-item-details {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: start;
-  width: calc(100% - 250px); /* Adjust width to account for image width and margin */
+  width: calc(100% - 250px);
 }
 
-/* Product Text */
+/* Product Text - Styling for product names */
 .checkout-item-name {
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 7px;
-
 }
 
+/* Product Price - Styling for product prices */
 .checkout-item-price {
   font-size: 27px;
   color: black;
@@ -119,46 +118,47 @@
   margin-bottom: 7px;
 }
 
+/* Product Quantity - Styling for product quantities */
 .checkout-item-quantity {
-  font-size: 20px; /* Increase font size */
+  font-size: 20px;
   margin: 5px 0;
   font-weight: 300;
   margin-bottom: 7px;
-
 }
 
+/* Product Total - Styling for total price of each product */
 .checkout-item-total {
   font-size: 23px;
   color: black;
   font-weight: 300;
 }
 
-/* Order Details Form */
+/* Order Details Form - Container for the order details form */
 .checkout-form {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   gap: 30px;
 }
 
+/* Form Input and Select - Styling for form inputs and selects */
 .checkout-form-input,
 .checkout-form-select {
-  width: 100%; /* Ensure inputs and selects take full width of their container */
+  width: 100%;
   padding: 10px;
   font-size: 20px;
   border: 1px solid #ddd;
-    
 }
 
-
+/* Form Label - Styling for form labels */
 .checkout-form-label {
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
-  text-align: left; /* Align labels to the left */
+  text-align: left;
   width: min-content;
 }
 
-/* Order Details Total Price */
+/* Order Details Total Price - Styling for the total price display */
 .checkout-total-price {
   font-size: 22px;
   font-weight: bold;
@@ -170,38 +170,36 @@
   box-sizing: border-box;
 }
 
-/* Order Number Container */
+/* Order Number Container - Container for the order number display */
 .checkout-order-number {
-  padding: 30px; 
-  text-align: center; /* טקסט מיושר למרכז */
+  padding: 30px;
+  text-align: center;
   height: min-content;
   background-color: #fff;
-  /* border: 1px solid #ddd; */
   transform: translateY(90%) translateX(10%);
-
 }
 
-/* Order Number Heading */
+/* Order Number Heading - Styling for the order number heading */
 .checkout-order-number h2 {
-  font-size: 40px; /* גודל גופן גדול */
-  font-weight: 700; /* משקל גופן כבד */
-  color: #2a9644; /* צבע ירוק מותאם */
-  margin-bottom: 15px; /* רווח תחתון */
-  letter-spacing: 1px; /* מרווח בין האותיות */
+  font-size: 40px;
+  font-weight: 700;
+  color: #2a9644;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
-/* Order Number Text */
+/* Order Number Text - Styling for the order number text */
 .checkout-order-number p {
-  font-size: 30px; /* גודל גופן גדול */
-  color: #333; /* צבע אפור כהה */
-  margin: 0; /* ביטול מרווח אוטומטי */
+  font-size: 30px;
+  color: #333;
+  margin: 0;
   font-weight: 700;
 }
 
-/* Error Message */
+/* Error Message - Styling for error messages */
 .error-message {
-  position:absolute;
-  transform: translateY(-110%) translateX(44%); 
+  position: absolute;
+  transform: translateY(-110%) translateX(44%);
   color: #af4242;
   background-color: #fde8ec;
   border-radius: 4px;
@@ -212,24 +210,51 @@
   white-space: nowrap;
   padding: 0.5rem 1rem;
   width: 60%;
-} 
+}
 
 .error-message.show {
   display: block;
 }
 
+/* Autofill Style - Styling to handle autofill background */
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset; /* ביטול צבע הרקע */
-  box-shadow: 0 0 0px 1000px white inset; /* ביטול צבע הרקע */
-  -webkit-text-fill-color: black; /* צבע הטקסט */
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  box-shadow: 0 0 0px 1000px white inset;
+  -webkit-text-fill-color: black;
 }
 
 input:-moz-autofill {
-  box-shadow: 0 0 0px 1000px white inset; /* ביטול צבע הרקע */
-  -moz-box-shadow: 0 0 0px 1000px white inset; /* ביטול צבע הרקע */
-  color: black; 
+  box-shadow: 0 0 0px 1000px white inset;
+  -moz-box-shadow: 0 0 0px 1000px white inset;
+  color: black;
 }
 
+/* Place Order Container - Background color for the place order container */
 .place-order-container {
   background-color: #F3F5F4;
+}
+
+/* Responsive Styles - Adjustments for screen widths 950px and below */
+@media screen and (max-width: 950px) {
+  .checkout-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 90%;
+  }
+
+  .checkout-cart-items,
+  .order-details {
+    width: 100%;
+    max-width: none;
+  }
+
+  .checkout-cart-items {
+    transform: translateX(-1%);
+    width: 85vw;
+  }
+
+  .checkout-submit-button {
+    transform: translateY(20%);
+    margin-bottom: 50px;
+  }
 }
