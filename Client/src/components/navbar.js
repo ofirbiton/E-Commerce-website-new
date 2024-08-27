@@ -81,7 +81,7 @@ const Navbar = ({ cartItems, totalPrice, updateCartQuantity, removeFromCart }) =
             <span className="cart-count">{cartItems.reduce((acc, item) => acc + item.quantity, 0)}</span>
           )}
           {totalPrice > 0 && (
-            <span className="cart-total">ILS{totalPrice}</span>
+            <span className="cart-total">₪{totalPrice}</span>
           )}
         </button>
       )}
