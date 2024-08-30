@@ -257,4 +257,9 @@ input:-moz-autofill {
     transform: translateY(20%);
     margin-bottom: 50px;
   }
+
+  .checkout-order-number{
+    transform: translateY(-10%);
+    width: 100%;
+  }
 }
