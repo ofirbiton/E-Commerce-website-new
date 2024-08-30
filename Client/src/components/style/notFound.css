@@ -1,0 +1,24 @@
+/* Container styles for the 404 component */
+.not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Styles for the 404 title */
+  .not-found__title {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    color: #4d4d4d;
+  }
+  
+  /* Styles for the message text */
+  .not-found__message {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  

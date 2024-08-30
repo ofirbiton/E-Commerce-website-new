@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './home';
 import Checkout from './checkout';
 import Navbar from './navbar';
+import NotFound from './notFound';
 
 const AppRouters = () => {
   // State to hold the cart items
@@ -54,11 +55,6 @@ const AppRouters = () => {
     updateCart(updatedCart);
   };
 
-  // Function to get the total quantity of items in the cart
-  const getTotalQuantity = () => {
-    return cartItems.reduce((total, item) => total + item.quantity, 0);
-  };
-
   // Function to calculate the total price of items in the cart
   const calculateTotalPrice = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -80,6 +76,8 @@ const AppRouters = () => {
           path="/checkout"
           element={<Checkout cartItems={cartItems} setCartItems={setCartItems}/>}
         />
+        {/* Route for the page not found component */}
+        <Route path="/*" element={<NotFound></NotFound>}/>
       </Routes>
     </Router>
   );
