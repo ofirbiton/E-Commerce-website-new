@@ -6,7 +6,7 @@ const Products = ({ addToCart }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/products')
+    fetch('/products')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('There was an error fetching the products!', error));

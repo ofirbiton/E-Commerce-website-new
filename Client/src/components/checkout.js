@@ -47,7 +47,7 @@ const Checkout = ({ cartItems, setCartItems }) => {
 
     try {
       // Send a POST request to the server with order details
-      const response = await fetch('http://localhost:3000/orders', {
+      const response = await fetch('/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
